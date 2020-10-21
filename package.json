@@ -1,7 +1,7 @@
 {
-  "name": "frontend-project-lvl1",
+  "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "",
+  "description": "Educational project on hexlet",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,10 +10,13 @@
     "type": "git",
     "url": "git+https://github.com/heXile/frontend-project-lvl1.git"
   },
-  "author": "",
+  "author": "hxl",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/heXile/frontend-project-lvl1/issues"
   },
-  "homepage": "https://github.com/heXile/frontend-project-lvl1#readme"
+  "homepage": "https://github.com/heXile/frontend-project-lvl1#readme",
+  "bin": {
+    "code": "brain-games.js"
+  }
 }
