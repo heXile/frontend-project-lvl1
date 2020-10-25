@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/heXile/frontend-project-lvl1#readme",
   "bin": {
-    "code": "brain-games.js"
-  }
+    "brain-games": "bin/brain-games.js"
+  },
+  "type": "module"
 }
