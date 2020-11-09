@@ -18,9 +18,6 @@ export default async (gameType) => {
     default: console.log('Game not selected');
   }
   greeting();
-  // Question: 4 + 10
-  // Your answer: 14
-  // Correct!
   const roundsToWin = 3;
   let correctAnswers = 0;
   while (correctAnswers < roundsToWin) {

@@ -1,8 +1,8 @@
 import promptly from 'promptly';
+import { getRndIncl } from '../src/tools.js';
 
 const MIN = 1;
 const MAX = 100;
-const getRndIncl = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 export const startRound = async (playerName) => {
   const guessedNumber = getRndIncl(MIN, MAX);

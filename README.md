@@ -3,3 +3,4 @@
 ![linter](https://github.com/heXile/frontend-project-lvl1/workflows/linter/badge.svg)
 
 Brain Even demo: https://asciinema.org/a/ftGBxuBMdnf7HN2beweTKDCRz
+Brain Calc demo: https://asciinema.org/a/IUODdHuZdUsFBu4QanEAMLgNu
