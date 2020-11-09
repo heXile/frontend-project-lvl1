@@ -1,8 +1,9 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
-import cli from '../src/cli.js';
+/* eslint-disable max-len */
+import index from '../src/index.js';
 
-const getRndIncl = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+index('even');
+/* const getRndIncl = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 const MIN = 1;
 const MAX = 100;
 const TARGET = 3;
@@ -20,9 +21,11 @@ while (correctAnswers < TARGET) {
     console.log('Correct!');
     correctAnswers += 1;
   } else {
+    // eslint-disable-next-line max-len
+    // eslint-disable-next-line max-len
     console.log(`'${answer}' is wrong answer ;(. Correct answer was '${isEven}'.\nLet's try again, ${name}!`);
     break;
   }
 }
 
-if (correctAnswers === TARGET) console.log(`Congratulations, ${name}!`);
+if (correctAnswers === TARGET) console.log(`Congratulations, ${name}!`); */
