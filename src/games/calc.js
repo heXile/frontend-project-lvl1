@@ -1,4 +1,3 @@
-import promptly from 'promptly';
 import {
   cons, car, cdr,
 } from '@hexlet/pairs';
