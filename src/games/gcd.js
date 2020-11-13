@@ -18,11 +18,10 @@ const getGCD = (a, b) => {
 
 const [MIN, MAX] = [1, 100];
 
-export const startRound = async (playerName) => {
+export const startRound = async () => {
   const [n1, n2] = [getRndIncl(MIN, MAX), getRndIncl(MIN, MAX)];
-  const gcd = getGCD(n1, n2);
+  const gcd = getGCD(n1, n2).toString();
   const answer = await cli(`Question: ${n1} ${n2}`);
-  if (answer === gcd.toString()) return true;
-  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${gcd}'.\nLet's try again, ${playerName}!`);
-  return false;
+  if (answer === gcd) return [true];
+  return [false, answer, gcd];
 };

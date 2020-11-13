@@ -9,7 +9,7 @@ const MAX = 15;
 
 export const greeting = 'What is the result of the expression?';
 
-export const startRound = async (playerName) => {
+export const startRound = async () => {
   const operands = cons(getRndIncl(MIN, MAX), getRndIncl(MIN, MAX));
   const chooseOperator = getRndIncl(1, 3);
   let operator;
@@ -25,7 +25,7 @@ export const startRound = async (playerName) => {
       exprRes = car(operands) * cdr(operands);
   }
   const answer = await cli(`Question: ${car(operands)} ${operator} ${cdr(operands)}`);
-  if (exprRes.toString() === answer) return true;
-  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${exprRes}'.\nLet's try again, ${playerName}!`);
-  return false;
+  exprRes = exprRes.toString();
+  if (exprRes === answer) return [true];
+  return [false, answer, exprRes];
 };
