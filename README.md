@@ -1,5 +1,5 @@
 # frontend-project-lvl1
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/81562f01eb1580cca4eb/maintainability)](https://codeclimate.com/github/heXile/frontend-project-lvl1/maintainability)
 ![linter](https://github.com/heXile/frontend-project-lvl1/workflows/linter/badge.svg)
 
 Brain Even Demo
