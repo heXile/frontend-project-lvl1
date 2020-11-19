@@ -26,28 +26,28 @@ Type one of the following:
 
 Guess whether a number is even:
 
-[![asciicast](https://asciinema.org/a/287XxCuThKXZ5zKIkkF4YNqFf.svg)](https://asciinema.org/a/287XxCuThKXZ5zKIkkF4YNqFf)
+[![asciicast](https://asciinema.org/a/bSpfg3dCLNpAlWIzRHx5aI30V.svg)](https://asciinema.org/a/bSpfg3dCLNpAlWIzRHx5aI30V)
 
 ### Brain Calc
 
 Calculate a math expression:
 
-[![asciicast](https://asciinema.org/a/IUODdHuZdUsFBu4QanEAMLgNu.svg)](https://asciinema.org/a/IUODdHuZdUsFBu4QanEAMLgNu)
+[![asciicast](https://asciinema.org/a/0yNc8INkq2Z0ILveEAf6wo6lj.svg)](https://asciinema.org/a/0yNc8INkq2Z0ILveEAf6wo6lj)
 
 ### Brain GCD
 
 Find a greater common divisor:
 
-[![asciicast](https://asciinema.org/a/xsFj91Rzoq91nnTUMuWYQQtxP.svg)](https://asciinema.org/a/xsFj91Rzoq91nnTUMuWYQQtxP)
+[![asciicast](https://asciinema.org/a/I5ni2RaGyLXJxrxQoG93sYPaX.svg)](https://asciinema.org/a/I5ni2RaGyLXJxrxQoG93sYPaX)
 
 ### Brain Progression
 
 Guess a hidden element of arithmetic progression:
 
-[![asciicast](https://asciinema.org/a/zxxzz98GYpdDVd8RIvTN4dnKF.svg)](https://asciinema.org/a/zxxzz98GYpdDVd8RIvTN4dnKF)
+[![asciicast](https://asciinema.org/a/VyBg8NvemOTSEW1esm0rdJZRH.svg)](https://asciinema.org/a/VyBg8NvemOTSEW1esm0rdJZRH)
 
 ### Brain Prime
 
 Guess whether a number is prime:
 
-[![asciicast](https://asciinema.org/a/8xOy65slwnaAY6UptHWEpTmmA.svg)](https://asciinema.org/a/8xOy65slwnaAY6UptHWEpTmmA)
+[![asciicast](https://asciinema.org/a/KVoSjLJKqU43NSfEIGsB4wCJ6.svg)](https://asciinema.org/a/KVoSjLJKqU43NSfEIGsB4wCJ6)
