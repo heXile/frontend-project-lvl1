@@ -1,5 +1,5 @@
-import cli from '../cli.js';
-import { getRndIncl } from '../tools.js';
+import getAnswerFromPlayer from '../cli.js';
+import { getRandomNumber } from '../utils.js';
 
 export const greeting = 'What number is missing in the progression?';
 const [progressionLengthMin, progressionLengthMax] = [5, 12];
@@ -17,15 +17,16 @@ const generateProgression = (progressionLength, progressionStep, progressionFirs
 };
 
 export const startRound = async () => {
-  const progressionLength = getRndIncl(progressionLengthMin, progressionLengthMax);
-  const hiddenElementPosition = getRndIncl(0, progressionLength - 1);
-  const progressionFirstElement = getRndIncl(firstElementMin, firstElementMax);
-  const progressionStep = getRndIncl(progressionStepMin, progressionStepMax);
+  const progressionLength = getRandomNumber(progressionLengthMin, progressionLengthMax);
+  const hiddenElementPosition = getRandomNumber(0, progressionLength - 1);
+  const progressionFirstElement = getRandomNumber(firstElementMin, firstElementMax);
+  const progressionStep = getRandomNumber(progressionStepMin, progressionStepMax);
   // eslint-disable-next-line max-len
   const progression = generateProgression(progressionLength, progressionStep, progressionFirstElement);
   const hiddenElement = progression[hiddenElementPosition].toString();
   progression[hiddenElementPosition] = placeholder;
-  const answer = await cli(`Question: ${progression.join(' ')}`);
+  console.log(`Question: ${progression.join(' ')}`);
+  const answer = await getAnswerFromPlayer('Your answer: ');
   if (answer === hiddenElement) return [true];
   return [false, answer, hiddenElement];
 };
