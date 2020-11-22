@@ -14,12 +14,15 @@ export default async (startRound, greeting) => {
   let correctAnswersCount = 0;
   while (correctAnswersCount < roundsToWin) {
     // eslint-disable-next-line no-await-in-loop
-    const [isAnswerCorrect, wrongAnswer, correctAnswer] = await startRound();
-    if (isAnswerCorrect) {
+    const { question, correctAnswer } = await startRound();
+    console.log(`Question: ${question}`);
+    // eslint-disable-next-line no-await-in-loop
+    const userAnswer = await getAnswerFromPlayer('Your answer: ');
+    if (userAnswer === correctAnswer) {
       correctAnswersCount += 1;
       console.log('Correct!');
     } else {
-      console.log(`'${wrongAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${playerName}!`);
       return;
     }
