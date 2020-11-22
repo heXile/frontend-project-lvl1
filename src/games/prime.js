@@ -1,4 +1,3 @@
-import getAnswerFromPlayer from '../cli.js';
 import { getRandomNumber } from '../utils.js';
 
 export const greeting = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -15,9 +14,7 @@ const isPrime = (number) => {
 
 export const startRound = async () => {
   const guessedNumber = getRandomNumber(min, max);
-  console.log(`Question: ${guessedNumber}`);
-  const answer = await getAnswerFromPlayer('Your answer: ');
+  const question = `Question: ${guessedNumber}`;
   const correctAnswer = isPrime(guessedNumber) ? 'yes' : 'no';
-  if (answer === correctAnswer) return [true];
-  return [false, answer, correctAnswer];
+  return { question, correctAnswer };
 };

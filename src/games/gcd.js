@@ -1,4 +1,3 @@
-import getAnswerFromPlayer from '../cli.js';
 import { getRandomNumber } from '../utils.js';
 
 export const greeting = 'Find the greatest common divisor of given numbers.';
@@ -21,8 +20,6 @@ const [MIN, MAX] = [1, 100];
 export const startRound = async () => {
   const [n1, n2] = [getRandomNumber(MIN, MAX), getRandomNumber(MIN, MAX)];
   const gcd = getGCD(n1, n2).toString();
-  console.log(`Question: ${n1} ${n2}`);
-  const answer = await getAnswerFromPlayer('Your answer: ');
-  if (answer === gcd) return [true];
-  return [false, answer, gcd];
+  const question = `Question: ${n1} ${n2}`;
+  return { question, correctAnswer: gcd };
 };

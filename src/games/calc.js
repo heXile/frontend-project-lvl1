@@ -2,7 +2,6 @@ import {
   cons, car, cdr,
 } from '@hexlet/pairs';
 import { getRandomNumber } from '../utils.js';
-import getAnswerFromPlayer from '../cli.js';
 
 const MIN = 5;
 const MAX = 15;
@@ -24,9 +23,7 @@ export const startRound = async () => {
     default: operator = '*';
       exprRes = car(operands) * cdr(operands);
   }
-  console.log(`Question: ${car(operands)} ${operator} ${cdr(operands)}`);
-  const answer = await getAnswerFromPlayer('Your answer: ');
+  const question = `Question: ${car(operands)} ${operator} ${cdr(operands)}`;
   exprRes = exprRes.toString();
-  if (exprRes === answer) return [true];
-  return [false, answer, exprRes];
+  return { question, correctAnswer: exprRes };
 };

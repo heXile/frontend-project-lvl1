@@ -1,4 +1,3 @@
-import getAnswerFromPlayer from '../cli.js';
 import { getRandomNumber } from '../utils.js';
 
 export const greeting = 'What number is missing in the progression?';
@@ -25,8 +24,6 @@ export const startRound = async () => {
   const progression = generateProgression(progressionLength, progressionStep, progressionFirstElement);
   const hiddenElement = progression[hiddenElementPosition].toString();
   progression[hiddenElementPosition] = placeholder;
-  console.log(`Question: ${progression.join(' ')}`);
-  const answer = await getAnswerFromPlayer('Your answer: ');
-  if (answer === hiddenElement) return [true];
-  return [false, answer, hiddenElement];
+  const question = `Question: ${progression.join(' ')}`;
+  return { question, correctAnswer: hiddenElement };
 };

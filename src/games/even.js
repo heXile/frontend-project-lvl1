@@ -1,4 +1,3 @@
-import getAnswerFromPlayer from '../cli.js';
 import { getRandomNumber } from '../utils.js';
 
 const MIN = 1;
@@ -7,9 +6,7 @@ export const greeting = 'Answer "yes" if the number is even, otherwise answer "n
 
 export const startRound = async () => {
   const guessedNumber = getRandomNumber(MIN, MAX);
-  console.log(`Question: ${guessedNumber}`);
-  const answer = await getAnswerFromPlayer('Your answer: ');
+  const question = `Question: ${guessedNumber}`;
   const isEven = guessedNumber % 2 === 0 ? 'yes' : 'no';
-  if (isEven === answer) return [true];
-  return [false, answer, isEven];
+  return { question, correctAnswer: isEven };
 };
