@@ -8,7 +8,13 @@ Just simple command-line games.
 
 Clone the repository: `git clone https://github.com/heXile/frontend-project-lvl1.git`
 
-Then type `make install` from repo root directory.
+Then type from repo root directory:
+
+```
+make install
+
+npm link
+```
 
 ## Starting games
 
