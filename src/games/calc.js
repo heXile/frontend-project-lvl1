@@ -12,20 +12,20 @@ export const startRound = () => {
   const operands = cons(getRandomNumber(MIN, MAX), getRandomNumber(MIN, MAX));
   const chooseOperator = getRandomNumber(1, 3);
   let operator;
-  let exprRes;
+  let expressionResult;
   switch (chooseOperator) {
     case 1: operator = '+';
-      exprRes = car(operands) + cdr(operands);
+      expressionResult = car(operands) + cdr(operands);
       break;
     case 2: operator = '-';
-      exprRes = car(operands) - cdr(operands);
+      expressionResult = car(operands) - cdr(operands);
       break;
     default: operator = '*';
-      exprRes = car(operands) * cdr(operands);
+      expressionResult = car(operands) * cdr(operands);
   }
   const question = `${car(operands)} ${operator} ${cdr(operands)}`;
-  exprRes = exprRes.toString();
-  return { question, correctAnswer: exprRes };
+  expressionResult = expressionResult.toString();
+  return { question, correctAnswer: expressionResult };
 };
 
 export default startRound;
