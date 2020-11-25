@@ -27,5 +27,5 @@ export default async (description, startRound) => {
       return;
     }
   }
-  if (correctAnswersCount === roundsToWin) print(`Congratulations, ${playerName}!`);
+  print(`Congratulations, ${playerName}!`);
 };
