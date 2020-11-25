@@ -7,9 +7,9 @@ const hello = async () => {
   return name;
 };
 
-export default async (startRound, greeting) => {
+export default async (description, startRound) => {
   const playerName = await hello();
-  console.log(greeting);
+  console.log(description);
   const roundsToWin = 3;
   let correctAnswersCount = 0;
   while (correctAnswersCount < roundsToWin) {

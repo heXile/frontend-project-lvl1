@@ -6,7 +6,7 @@ import { getRandomNumber } from '../utils.js';
 const MIN = 5;
 const MAX = 15;
 
-export const greeting = 'What is the result of the expression?';
+export const description = 'What is the result of the expression?';
 
 export const startRound = async () => {
   const operands = cons(getRandomNumber(MIN, MAX), getRandomNumber(MIN, MAX));

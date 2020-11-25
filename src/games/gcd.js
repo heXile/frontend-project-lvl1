@@ -1,6 +1,6 @@
 import { getRandomNumber } from '../utils.js';
 
-export const greeting = 'Find the greatest common divisor of given numbers.';
+export const description = 'Find the greatest common divisor of given numbers.';
 
 const getGCD = (a, b) => {
   let [op1, op2] = [a, b];

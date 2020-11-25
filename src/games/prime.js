@@ -1,6 +1,6 @@
 import { getRandomNumber } from '../utils.js';
 
-export const greeting = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+export const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const [min, max] = [1, 100];
 const isPrime = (number) => {

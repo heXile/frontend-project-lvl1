@@ -1,6 +1,6 @@
 import { getRandomNumber } from '../utils.js';
 
-export const greeting = 'What number is missing in the progression?';
+export const description = 'What number is missing in the progression?';
 const [progressionLengthMin, progressionLengthMax] = [5, 12];
 const [firstElementMin, firstElementMax] = [-10, 50];
 const [progressionStepMin, progressionStepMax] = [-5, 10];
