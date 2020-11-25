@@ -4,9 +4,11 @@ const MIN = 1;
 const MAX = 100;
 export const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
+const isEven = (number) => number % 2 === 0;
+
 export const startRound = () => {
   const guessedNumber = getRandomNumber(MIN, MAX);
   const question = guessedNumber.toString();
-  const isEven = guessedNumber % 2 === 0 ? 'yes' : 'no';
-  return { question, correctAnswer: isEven };
+  const correctAnswer = isEven(guessedNumber) ? 'yes' : 'no';
+  return { question, correctAnswer };
 };
