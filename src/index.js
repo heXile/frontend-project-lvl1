@@ -1,6 +1,6 @@
 import { askQuestion, print } from './cli.js';
 
-const hello = async () => {
+const greetUser = async () => {
   print('Welcome to the Brain Games');
   const name = await askQuestion('May I have a name, sir? ');
   print(`Hello, ${name}!`);
@@ -8,13 +8,13 @@ const hello = async () => {
 };
 
 export default async (description, startRound) => {
-  const playerName = await hello();
+  const playerName = await greetUser();
   print(description);
   const roundsToWin = 3;
   let correctAnswersCount = 0;
   while (correctAnswersCount < roundsToWin) {
     // eslint-disable-next-line no-await-in-loop
-    const { question, correctAnswer } = await startRound();
+    const { question, correctAnswer } = startRound();
     print(`Question: ${question}`);
     // eslint-disable-next-line no-await-in-loop
     const userAnswer = await askQuestion('Your answer: ');

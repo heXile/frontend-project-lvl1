@@ -8,7 +8,7 @@ const MAX = 15;
 
 export const description = 'What is the result of the expression?';
 
-export const startRound = async () => {
+export const startRound = () => {
   const operands = cons(getRandomNumber(MIN, MAX), getRandomNumber(MIN, MAX));
   const chooseOperator = getRandomNumber(1, 3);
   let operator;
@@ -23,7 +23,9 @@ export const startRound = async () => {
     default: operator = '*';
       exprRes = car(operands) * cdr(operands);
   }
-  const question = `Question: ${car(operands)} ${operator} ${cdr(operands)}`;
+  const question = `${car(operands)} ${operator} ${cdr(operands)}`;
   exprRes = exprRes.toString();
   return { question, correctAnswer: exprRes };
 };
+
+export default startRound;

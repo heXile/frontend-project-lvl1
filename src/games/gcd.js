@@ -17,9 +17,9 @@ const getGCD = (a, b) => {
 
 const [MIN, MAX] = [1, 100];
 
-export const startRound = async () => {
+export const startRound = () => {
   const [n1, n2] = [getRandomNumber(MIN, MAX), getRandomNumber(MIN, MAX)];
   const gcd = getGCD(n1, n2).toString();
-  const question = `Question: ${n1} ${n2}`;
+  const question = `${n1} ${n2}`;
   return { question, correctAnswer: gcd };
 };

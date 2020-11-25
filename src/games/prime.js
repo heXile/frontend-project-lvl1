@@ -12,9 +12,9 @@ const isPrime = (number) => {
   return true;
 };
 
-export const startRound = async () => {
+export const startRound = () => {
   const guessedNumber = getRandomNumber(min, max);
-  const question = `Question: ${guessedNumber}`;
+  const question = guessedNumber.toString();
   const correctAnswer = isPrime(guessedNumber) ? 'yes' : 'no';
   return { question, correctAnswer };
 };

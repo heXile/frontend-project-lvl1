@@ -15,7 +15,7 @@ const generateProgression = (progressionLength, progressionStep, progressionFirs
   return progression;
 };
 
-export const startRound = async () => {
+export const startRound = () => {
   const progressionLength = getRandomNumber(progressionLengthMin, progressionLengthMax);
   const hiddenElementPosition = getRandomNumber(0, progressionLength - 1);
   const progressionFirstElement = getRandomNumber(firstElementMin, firstElementMax);
@@ -24,6 +24,6 @@ export const startRound = async () => {
   const progression = generateProgression(progressionLength, progressionStep, progressionFirstElement);
   const hiddenElement = progression[hiddenElementPosition].toString();
   progression[hiddenElementPosition] = placeholder;
-  const question = `Question: ${progression.join(' ')}`;
+  const question = progression.join(' ');
   return { question, correctAnswer: hiddenElement };
 };
