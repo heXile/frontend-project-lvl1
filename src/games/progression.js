@@ -17,11 +17,11 @@ const generateProgression = (progressionLength, progressionStep, progressionFirs
 
 export const startRound = () => {
   const progressionLength = getRandomNumber(progressionLengthMin, progressionLengthMax);
-  const hiddenElementPosition = getRandomNumber(0, progressionLength - 1);
   const progressionFirstElement = getRandomNumber(firstElementMin, firstElementMax);
   const progressionStep = getRandomNumber(progressionStepMin, progressionStepMax);
   // eslint-disable-next-line max-len
   const progression = generateProgression(progressionLength, progressionStep, progressionFirstElement);
+  const hiddenElementPosition = getRandomNumber(0, progressionLength - 1);
   const hiddenElement = progression[hiddenElementPosition].toString();
   progression[hiddenElementPosition] = placeholder;
   const question = progression.join(' ');

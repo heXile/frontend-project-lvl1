@@ -3,28 +3,43 @@ import {
 } from '@hexlet/pairs';
 import { getRandomNumber } from '../utils.js';
 
-const MIN = 5;
-const MAX = 15;
+const operandMin = 3;
+const operandMax = 15;
+const operators = ['+', '-', '*'];
 
 export const description = 'What is the result of the expression?';
 
-export const startRound = () => {
-  const operands = cons(getRandomNumber(MIN, MAX), getRandomNumber(MIN, MAX));
-  const chooseOperator = getRandomNumber(1, 3);
-  let operator;
-  let expressionResult;
-  switch (chooseOperator) {
-    case 1: operator = '+';
-      expressionResult = car(operands) + cdr(operands);
-      break;
-    case 2: operator = '-';
-      expressionResult = car(operands) - cdr(operands);
-      break;
-    default: operator = '*';
-      expressionResult = car(operands) * cdr(operands);
+const getRandomOperands = (min, max) => cons(getRandomNumber(min, max), getRandomNumber(min, max));
+
+const getRandomArrayElement = (array) => array[getRandomNumber(0, array.length - 1)];
+
+const getRandomExpression = (operatorList, min, max) => {
+  const operator = getRandomArrayElement(operatorList);
+  const operands = getRandomOperands(min, max);
+  return cons(operator, operands);
+};
+
+const calculateExpression = (expression) => {
+  // expression text view: (+ (x, y))
+  const operator = car(expression);
+  const operands = cdr(expression);
+  switch (operator) {
+    case '+':
+      return car(operands) + cdr(operands);
+    case '-':
+      return car(operands) - cdr(operands);
+    case '*':
+      return car(operands) * cdr(operands);
+
+    default:
+      return false;
   }
-  const question = `${car(operands)} ${operator} ${cdr(operands)}`;
-  expressionResult = expressionResult.toString();
+};
+
+export const startRound = () => {
+  const expression = getRandomExpression(operators, operandMin, operandMax);
+  const expressionResult = calculateExpression(expression).toString();
+  const question = `${car(cdr(expression))} ${car(expression)} ${cdr(cdr(expression))}`;
   return { question, correctAnswer: expressionResult };
 };
 
