@@ -25,8 +25,8 @@ export const startRound = () => {
     progressionFirstElement,
   );
   const hiddenElementPosition = getRandomNumber(0, progressionLength - 1);
-  const hiddenElement = progression[hiddenElementPosition].toString();
+  const hiddenElement = progression[hiddenElementPosition];
   progression[hiddenElementPosition] = placeholder;
   const question = progression.join(' ');
-  return { question, correctAnswer: hiddenElement };
+  return { question, correctAnswer: hiddenElement.toString() };
 };
