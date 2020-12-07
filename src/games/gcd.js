@@ -2,24 +2,21 @@ import { getRandomNumber } from '../utils.js';
 
 export const description = 'Find the greatest common divisor of given numbers.';
 
-const getGCD = (a, b) => {
-  let [op1, op2] = [a, b];
-  if (op2 > op1) {
-    [op1, op2] = [op2, op1];
-  }
-  let r;
+const getGCD = (num1, num2) => {
+  let [greaterNumber, lesserNumber] = num1 > num2 ? [num1, num2] : [num2, num1];
+  let remainder;
   do {
-    r = op1 % op2;
-    [op1, op2] = [op2, r];
-  } while (op2 !== 0);
-  return op1;
+    remainder = greaterNumber % lesserNumber;
+    [greaterNumber, lesserNumber] = [lesserNumber, remainder];
+  } while (lesserNumber !== 0);
+  return greaterNumber;
 };
 
 const [MIN, MAX] = [1, 100];
 
 export const startRound = () => {
-  const [n1, n2] = [getRandomNumber(MIN, MAX), getRandomNumber(MIN, MAX)];
-  const gcd = getGCD(n1, n2).toString();
-  const question = `${n1} ${n2}`;
-  return { question, correctAnswer: gcd };
+  const [num1, num2] = [getRandomNumber(MIN, MAX), getRandomNumber(MIN, MAX)];
+  const gcd = getGCD(num1, num2);
+  const question = `${num1} ${num2}`;
+  return { question, correctAnswer: gcd.toString() };
 };

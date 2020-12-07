@@ -16,13 +16,10 @@ const getRandomArrayElement = (array) => array[getRandomNumber(0, array.length -
 const getRandomExpression = (operatorList, min, max) => {
   const operator = getRandomArrayElement(operatorList);
   const operands = getRandomOperands(min, max);
-  return cons(operator, operands);
+  return { operator, operands };
 };
 
-const calculateExpression = (expression) => {
-  // expression text view: (+ (x, y))
-  const operator = car(expression);
-  const operands = cdr(expression);
+const calculateExpression = (operator, operands) => {
   switch (operator) {
     case '+':
       return car(operands) + cdr(operands);
@@ -30,17 +27,16 @@ const calculateExpression = (expression) => {
       return car(operands) - cdr(operands);
     case '*':
       return car(operands) * cdr(operands);
-
     default:
-      return false;
+      throw new Error('Error message here');
   }
 };
 
 export const startRound = () => {
-  const expression = getRandomExpression(operators, operandMin, operandMax);
-  const expressionResult = calculateExpression(expression).toString();
-  const question = `${car(cdr(expression))} ${car(expression)} ${cdr(cdr(expression))}`;
-  return { question, correctAnswer: expressionResult };
+  const { operator, operands } = getRandomExpression(operators, operandMin, operandMax);
+  const expressionResult = calculateExpression(operator, operands);
+  const question = `${car(operands)} ${operator} ${cdr(operands)}`;
+  return { question, correctAnswer: expressionResult.toString() };
 };
 
 export default startRound;

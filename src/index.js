@@ -13,7 +13,6 @@ export default async (description, startRound) => {
   const roundsToWin = 3;
   let correctAnswersCount = 0;
   while (correctAnswersCount < roundsToWin) {
-    // eslint-disable-next-line no-await-in-loop
     const { question, correctAnswer } = startRound();
     print(`Question: ${question}`);
     // eslint-disable-next-line no-await-in-loop
