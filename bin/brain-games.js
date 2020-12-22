@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-import cli from '../src/cli.js';
+import { askQuestion, print } from '../src/cli.js';
 
 (async () => {
-  console.log('Wellcome to the Brain Games');
-  const name = await cli('May I have a name, sir? ');
-  console.log(`Hello, ${name}!`);
+  print('Wellcome to the Brain Games');
+  const name = await askQuestion('May I have a name, sir? ');
+  print(`Hello, ${name}!`);
 })();
