@@ -14,7 +14,7 @@ const getGCD = (num1, num2) => {
 
 const [MIN, MAX] = [1, 100];
 
-export const startRound = () => {
+export const initRound = () => {
   const [num1, num2] = [getRandomNumber(MIN, MAX), getRandomNumber(MIN, MAX)];
   const gcd = getGCD(num1, num2);
   const question = `${num1} ${num2}`;

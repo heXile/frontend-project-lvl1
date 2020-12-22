@@ -6,7 +6,7 @@ export const description = 'Answer "yes" if the number is even, otherwise answer
 
 const isEven = (number) => number % 2 === 0;
 
-export const startRound = () => {
+export const initRound = () => {
   const guessedNumber = getRandomNumber(MIN, MAX);
   const question = guessedNumber.toString();
   const correctAnswer = isEven(guessedNumber) ? 'yes' : 'no';

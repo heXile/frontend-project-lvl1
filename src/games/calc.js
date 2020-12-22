@@ -32,11 +32,9 @@ const calculateExpression = (operator, operands) => {
   }
 };
 
-export const startRound = () => {
+export const initRound = () => {
   const { operator, operands } = getRandomExpression(operators, operandMin, operandMax);
   const expressionResult = calculateExpression(operator, operands);
   const question = `${car(operands)} ${operator} ${cdr(operands)}`;
   return { question, correctAnswer: expressionResult.toString() };
 };
-
-export default startRound;

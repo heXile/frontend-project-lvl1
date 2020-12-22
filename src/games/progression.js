@@ -15,7 +15,7 @@ const generateProgression = (progressionLength, progressionStep, progressionFirs
   return progression;
 };
 
-export const startRound = () => {
+export const initRound = () => {
   const progressionLength = getRandomNumber(progressionLengthMin, progressionLengthMax);
   const progressionFirstElement = getRandomNumber(firstElementMin, firstElementMax);
   const progressionStep = getRandomNumber(progressionStepMin, progressionStepMax);

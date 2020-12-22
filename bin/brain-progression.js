@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 import startGame from '../src/index.js';
-import { description, startRound } from '../src/games/progression.js';
+import { description, initRound } from '../src/games/progression.js';
 
-startGame(description, startRound);
+startGame(description, initRound);

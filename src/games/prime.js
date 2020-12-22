@@ -12,7 +12,7 @@ const isPrime = (number) => {
   return true;
 };
 
-export const startRound = () => {
+export const initRound = () => {
   const guessedNumber = getRandomNumber(min, max);
   const question = guessedNumber.toString();
   const correctAnswer = isPrime(guessedNumber) ? 'yes' : 'no';
