@@ -1,6 +1,3 @@
-import {
-  cons, car, cdr,
-} from '@hexlet/pairs';
 import { getRandomNumber } from '../utils.js';
 
 const operandMin = 3;
@@ -9,32 +6,26 @@ const operators = ['+', '-', '*'];
 
 export const description = 'What is the result of the expression?';
 
-const getRandomOperands = (min, max) => cons(getRandomNumber(min, max), getRandomNumber(min, max));
-
 const getRandomArrayElement = (array) => array[getRandomNumber(0, array.length - 1)];
 
-const getRandomExpression = (operatorList, min, max) => {
-  const operator = getRandomArrayElement(operatorList);
-  const operands = getRandomOperands(min, max);
-  return { operator, operands };
-};
-
-const calculateExpression = (operator, operands) => {
+const calculateExpression = (operator, operand1, operand2) => {
   switch (operator) {
     case '+':
-      return car(operands) + cdr(operands);
+      return operand1 + operand2;
     case '-':
-      return car(operands) - cdr(operands);
+      return operand1 - operand2;
     case '*':
-      return car(operands) * cdr(operands);
+      return operand1 * operand2;
     default:
       throw new Error('Error message here');
   }
 };
 
 export const initRound = () => {
-  const { operator, operands } = getRandomExpression(operators, operandMin, operandMax);
-  const expressionResult = calculateExpression(operator, operands);
-  const question = `${car(operands)} ${operator} ${cdr(operands)}`;
+  const [operand1, operand2] = [getRandomNumber(operandMin, operandMax),
+    getRandomNumber(operandMin, operandMax)];
+  const operator = getRandomArrayElement(operators);
+  const expressionResult = calculateExpression(operator, operand1, operand2);
+  const question = `${operand1} ${operator} ${operand2}`;
   return { question, correctAnswer: expressionResult.toString() };
 };
