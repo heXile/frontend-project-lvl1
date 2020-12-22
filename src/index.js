@@ -1,10 +1,10 @@
 import { askQuestion, print } from './cli.js';
 
-export default async (description, initRound) => {
+export default async (initGame) => {
   print('Welcome to the Brain Games');
   const playerName = await askQuestion('May I have a name, sir? ');
   print(`Hello, ${playerName}!`);
-
+  const { description, initRound } = initGame();
   print(description);
   const roundsToWin = 3;
   let correctAnswersCount = 0;

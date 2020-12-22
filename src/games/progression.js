@@ -1,6 +1,6 @@
 import { getRandomNumber } from '../utils.js';
 
-export const description = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
 const [progressionLengthMin, progressionLengthMax] = [5, 12];
 const [firstElementMin, firstElementMax] = [-10, 50];
 const [progressionStepMin, progressionStepMax] = [-5, 10];
@@ -15,7 +15,7 @@ const generateProgression = (progressionLength, progressionStep, progressionFirs
   return progression;
 };
 
-export const initRound = () => {
+const initRound = () => {
   const progressionLength = getRandomNumber(progressionLengthMin, progressionLengthMax);
   const progressionFirstElement = getRandomNumber(firstElementMin, firstElementMax);
   const progressionStep = getRandomNumber(progressionStepMin, progressionStepMax);
@@ -30,3 +30,5 @@ export const initRound = () => {
   const question = progression.join(' ');
   return { question, correctAnswer: hiddenElement.toString() };
 };
+
+export default () => ({ description, initRound });

@@ -4,7 +4,7 @@ const operandMin = 3;
 const operandMax = 15;
 const operators = ['+', '-', '*'];
 
-export const description = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
 const getRandomArrayElement = (array) => array[getRandomNumber(0, array.length - 1)];
 
@@ -21,7 +21,7 @@ const calculateExpression = (operator, operand1, operand2) => {
   }
 };
 
-export const initRound = () => {
+const initRound = () => {
   const [operand1, operand2] = [getRandomNumber(operandMin, operandMax),
     getRandomNumber(operandMin, operandMax)];
   const operator = getRandomArrayElement(operators);
@@ -29,3 +29,5 @@ export const initRound = () => {
   const question = `${operand1} ${operator} ${operand2}`;
   return { question, correctAnswer: expressionResult.toString() };
 };
+
+export default () => ({ description, initRound });
